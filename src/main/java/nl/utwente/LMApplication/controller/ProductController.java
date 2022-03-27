@@ -56,7 +56,6 @@ public class ProductController {
 
     @DeleteMapping("/product")
     public int deleteProduct(@PathVariable int id){
-
         return id;
     }
 }
