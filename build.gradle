@@ -17,6 +17,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springdoc:springdoc-openapi-ui:1.6.4'
+	implementation 'org.apache.httpcomponents:httpclient:4.4.1'
 }
 
 tasks.named('test') {

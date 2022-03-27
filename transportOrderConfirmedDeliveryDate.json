@@ -1,0 +1,39 @@
+{
+    "transportOrderId": 1,
+    "goodsList": [
+      {
+        "goodsId": 1,
+        "product": {
+          "productId": 1,
+          "productName": "Chicken",
+          "productQuantity": 0,
+          "productUnit": "kg",
+          "productWeightPerUnit": 0,
+          "safetyStock": 0,
+          "inventoryAfterThisOrder": 0
+        },
+        "amount": 100
+      },
+      {
+        "goodsId": 2,
+        "product": {
+          "productId": 2,
+          "productName": "Beef",
+          "productQuantity": 0,
+          "productUnit": "kg",
+          "productWeightPerUnit": 0,
+          "safetyStock": 0,
+          "inventoryAfterThisOrder": 0
+        },
+        "amount": 50
+      }
+    ],
+    "branchId": 0,
+    "transportCompanyId": 0,
+    "truckId": 0,
+    "orderWeight": 0,
+    "creationDate": "2022-03-26T09:39:48.677+00:00",
+    "pickupDate": "2022-03-27T09:39:48.677+00:00",
+    "proposedDeliveryDate": "2022-03-26T09:39:48.677+00:00",
+    "confirmedDeliveryDate": "2022-03-28T09:39:48.677+00:00"
+  }

@@ -2,41 +2,82 @@ package nl.utwente.LMApplication.model;
 
 public class Product {
 
-    private int id;
-    private String name;
-    private int amount;
+    private int productId;
+    private String productName;
+    private double productQuantity;
+    private String productUnit;
+    private double productWeightPerUnit;
+    private double safetyStock;
+    private double inventoryAfterThisOrder;
 
-    public int getId() {
-        return this.id;
+    public int getProductId() {
+        return this.productId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
-    public String getName() {
-        return this.name;
+    public String getProductName() {
+        return this.productName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
-    public int getAmount() {
-        return this.amount;
+    public double getProductQuantity() {
+        return this.productQuantity;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void setProductQuantity(double productQuantity) {
+        this.productQuantity = productQuantity;
+    }
+
+    public String getProductUnit() {
+        return this.productUnit;
+    }
+
+    public void setProductUnit(String productUnit) {
+        this.productUnit = productUnit;
+    }
+
+    public double getProductWeightPerUnit() {
+        return this.productWeightPerUnit;
+    }
+
+    public void setProductWeightPerUnit(double productWeightPerUnit) {
+        this.productWeightPerUnit = productWeightPerUnit;
+    }
+
+    public double getSafetyStock() {
+        return this.safetyStock;
+    }
+
+    public void setSafetyStock(double safetyStock) {
+        this.safetyStock = safetyStock;
+    }
+
+    public double getInventoryAfterThisOrder() {
+        return this.inventoryAfterThisOrder;
+    }
+
+    public void setInventoryAfterThisOrder(double inventoryAfterThisOrder) {
+        this.inventoryAfterThisOrder = inventoryAfterThisOrder;
+    }
+
+    private int counter = 1;
+
+    public Product(String productName, String productUnit) {
+        this.productName = productName;
+        this.productUnit = productUnit;
+        this.productId = counter;
+        counter++;
     }
 
     public Product(){}
 
-    public Product(int id, String name, int amount){
-        this.id = id;
-        this.name = name;
-        this.amount = amount;
-    }
+
 
 
     
