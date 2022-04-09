@@ -1,24 +1,38 @@
 package nl.utwente.LMApplication.model;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+@Entity
 public class Goods {
 
-    private int goodsId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer goodsId;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "product_id")
     private Product product;
     private int amount;
 
     public Goods(){}
 
-    public Goods(int goodsId, Product product, int amount){
+    public Goods(Integer goodsId, Product product, int amount){
         this.goodsId = goodsId;
         this.product = product;
         this.amount = amount;
     }
 
-    public int getGoodsId() {
+    public Integer getGoodsId() {
         return this.goodsId;
     }
 
-    public void setGoodsId(int goodsId) {
+    public void setGoodsId(Integer goodsId) {
         this.goodsId = goodsId;
     }
 

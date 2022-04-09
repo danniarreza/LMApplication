@@ -1,7 +1,22 @@
 package nl.utwente.LMApplication.model;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+@Entity
 public class PurchaseRequest {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int purchaseRequestId;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "product_id")
     private Product product;
     private int amount;
     private int counter = 1;

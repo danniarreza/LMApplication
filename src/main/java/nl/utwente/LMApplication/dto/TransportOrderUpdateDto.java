@@ -2,20 +2,27 @@ package nl.utwente.LMApplication.dto;
 
 import java.util.Date;
 
-public class TransportOrderDeliveryDateDto {
+public class TransportOrderUpdateDto {
     
     private int transportOrderId;
+    private int salesOrderId;
     private Date pickupDate;
     private Date proposedDeliveryDate;
     private Date confirmedDeliveryDate;
+    private String status;
 
-    public TransportOrderDeliveryDateDto(int transportOrderId, Date pickupDate, Date proposedDeliveryDate, Date confirmedDeliveryDate) {
+
+    public TransportOrderUpdateDto() {
+    }
+
+    public TransportOrderUpdateDto(int transportOrderId, int salesOrderId, Date pickupDate, Date proposedDeliveryDate, Date confirmedDeliveryDate, String status) {
         this.transportOrderId = transportOrderId;
+        this.salesOrderId = salesOrderId;
         this.pickupDate = pickupDate;
         this.proposedDeliveryDate = proposedDeliveryDate;
         this.confirmedDeliveryDate = confirmedDeliveryDate;
+        this.status = status;
     }
-
 
     public int getTransportOrderId() {
         return this.transportOrderId;
@@ -23,6 +30,14 @@ public class TransportOrderDeliveryDateDto {
 
     public void setTransportOrderId(int transportOrderId) {
         this.transportOrderId = transportOrderId;
+    }
+
+    public int getSalesOrderId() {
+        return this.salesOrderId;
+    }
+
+    public void setSalesOrderId(int salesOrderId) {
+        this.salesOrderId = salesOrderId;
     }
 
     public Date getPickupDate() {
@@ -49,4 +64,12 @@ public class TransportOrderDeliveryDateDto {
         this.confirmedDeliveryDate = confirmedDeliveryDate;
     }
 
+    public String getStatus() {
+        return this.status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    
 }

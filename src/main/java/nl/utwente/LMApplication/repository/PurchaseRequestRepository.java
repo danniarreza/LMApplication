@@ -3,55 +3,56 @@ package nl.utwente.LMApplication.repository;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
 import nl.utwente.LMApplication.model.PurchaseRequest;
 
-@Service
-public class PurchaseRequestRepository {
+// @Service
+public interface PurchaseRequestRepository extends JpaRepository<PurchaseRequest, Integer> {
     
-    private static final List<PurchaseRequest> purchaseRequestList = new ArrayList<>();
-    private static int idCounter = 1;
+    // private static final List<PurchaseRequest> purchaseRequestList = new ArrayList<>();
+    // private static int idCounter = 1;
 
-    public PurchaseRequest createPurchaseRequest(PurchaseRequest purchaseRequest){
-        purchaseRequest.setPurchaseRequestId(idCounter++);
-        purchaseRequestList.add(purchaseRequest);
-        return purchaseRequest;
-    }
+    // public PurchaseRequest createPurchaseRequest(PurchaseRequest purchaseRequest){
+    //     purchaseRequest.setPurchaseRequestId(idCounter++);
+    //     purchaseRequestList.add(purchaseRequest);
+    //     return purchaseRequest;
+    // }
 
-    public PurchaseRequest updatePurchaseRequest(PurchaseRequest purchaseRequest){
-        purchaseRequestList.add(purchaseRequest);
-        return purchaseRequest;
-    }
+    // public PurchaseRequest updatePurchaseRequest(PurchaseRequest purchaseRequest){
+    //     purchaseRequestList.add(purchaseRequest);
+    //     return purchaseRequest;
+    // }
 
-    public PurchaseRequest getPurchaseRequest(int id){
-        for (PurchaseRequest purchaseRequest : purchaseRequestList) {
-            if (purchaseRequest.getPurchaseRequestId() == id){
-                return purchaseRequest;
-            }
-        }
+    // public PurchaseRequest getPurchaseRequest(int id){
+    //     for (PurchaseRequest purchaseRequest : purchaseRequestList) {
+    //         if (purchaseRequest.getPurchaseRequestId() == id){
+    //             return purchaseRequest;
+    //         }
+    //     }
 
-        return null;
-    }
+    //     return null;
+    // }
 
-    public PurchaseRequest getPurchaseRequestByProductId(int id){
+    // public PurchaseRequest getPurchaseRequestByProductId(int id){
 
-        for (PurchaseRequest purchaseRequest : purchaseRequestList) {
-            if (purchaseRequest.getProduct().getProductId() == id) {
-                return purchaseRequest;
-            }
-        }
+    //     for (PurchaseRequest purchaseRequest : purchaseRequestList) {
+    //         if (purchaseRequest.getProduct().getProductId() == id) {
+    //             return purchaseRequest;
+    //         }
+    //     }
 
-        return null;
-    }
+    //     return null;
+    // }
 
-    public int deletePurchaseRequest(int id){
-        purchaseRequestList.remove(id);
-        return id;
-    }
+    // public int deletePurchaseRequest(int id){
+    //     purchaseRequestList.remove(id);
+    //     return id;
+    // }
 
-    public List<PurchaseRequest> getPurchaseRequestsAll(){
-        return purchaseRequestList;
-    }
+    // public List<PurchaseRequest> getPurchaseRequestsAll(){
+    //     return purchaseRequestList;
+    // }
     
 }

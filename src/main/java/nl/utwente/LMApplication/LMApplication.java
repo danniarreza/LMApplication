@@ -1,31 +1,27 @@
 package nl.utwente.LMApplication;
 import java.util.Arrays;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
-@SpringBootApplication
-public class LMApplication {
+import nl.utwente.LMApplication.publisher.MessageProducer;
+
+@SpringBootApplication(scanBasePackages = "nl.utwente.LMApplication")
+public class LMApplication implements CommandLineRunner{
+
+	@Autowired
+	private MessageProducer messageProducer;
 
 	public static void main(String[] args) {
 		SpringApplication.run(LMApplication.class, args);
 	}
+	@Override
+	public void run(String... args) throws Exception {
+		messageProducer.sendMessage("Send this message to default destination.");
 
-	// @Bean
-	// public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
-	// 	return args -> {
-
-	// 		System.out.println("Let's inspect the beans provided by Spring Boot:");
-
-	// 		String[] beanNames = ctx.getBeanDefinitionNames();
-	// 		Arrays.sort(beanNames);
-	// 		for (String beanName : beanNames) {
-	// 			System.out.println(beanName);
-	// 		}
-
-	// 	};
-	// }
+	}
 }

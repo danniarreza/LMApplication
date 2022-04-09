@@ -34,7 +34,7 @@ public class PurchaseRequestController {
     public PurchaseRequest getPurchaseRequest(@PathVariable int id){
         // PurchaseRequest purchaseRequest = new PurchaseRequest("Chicken", "kg");
 
-        PurchaseRequest purchaseRequest = purchaseRequestRepository.getPurchaseRequest(id);
+        PurchaseRequest purchaseRequest = purchaseRequestRepository.findById(id).orElse(null);
 
         return purchaseRequest;
     }
@@ -48,26 +48,26 @@ public class PurchaseRequestController {
         //     purchaseRequestList.add(purchaseRequest);
         // }
 
-        List<PurchaseRequest> purchaseRequestList = purchaseRequestRepository.getPurchaseRequestsAll();
+        List<PurchaseRequest> purchaseRequestList = purchaseRequestRepository.findAll();
         
         return purchaseRequestList;
     }
 
     @PostMapping("/purchaseRequest")
     public PurchaseRequest createPurchaseRequest(@RequestBody PurchaseRequest purchaseRequest){
-        purchaseRequestRepository.createPurchaseRequest(purchaseRequest);
+        purchaseRequestRepository.save(purchaseRequest);
         return purchaseRequest;
     }
 
     @PutMapping("/purchaseRequest")
     public PurchaseRequest updatePurchaseRequest(@RequestBody PurchaseRequest purchaseRequest){
-        purchaseRequestRepository.updatePurchaseRequest(purchaseRequest);
+        purchaseRequestRepository.save(purchaseRequest);
         return purchaseRequest;
     }
 
     @DeleteMapping("/purchaseRequest")
     public int deletePurchaseRequest(@PathVariable int id){
-        purchaseRequestRepository.deletePurchaseRequest(id);
+        purchaseRequestRepository.deleteById(id);
         return id;
     }
 

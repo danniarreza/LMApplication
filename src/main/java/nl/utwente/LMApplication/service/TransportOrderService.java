@@ -10,7 +10,7 @@ import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import nl.utwente.LMApplication.dto.TransportOrderDeliveryDateDto;
+import nl.utwente.LMApplication.dto.TransportOrderUpdateDto;
 import nl.utwente.LMApplication.model.TransportOrder;
 
 @Service
@@ -21,15 +21,21 @@ public class TransportOrderService {
     public void updateTransportOrder(TransportOrder transportOrder){
 
         // define target url
-        String url = "http://localhost:8081/salesOrder/" + transportOrder.getTransportOrderId();
+        String url = "http://localhost:8081/salesOrder/" + transportOrder.getSalesOrderId();
 
         // create a variable to update transport order's delivery date
-        Map<String, Date> transportOrderConfirmedDeliveryDate = new HashMap<>();
-        transportOrderConfirmedDeliveryDate.put("confirmedDeliveryDate", transportOrder.getConfirmedDeliveryDate());
+
+        TransportOrderUpdateDto transportOrderUpdateDto = new TransportOrderUpdateDto();
+
+        transportOrderUpdateDto.setConfirmedDeliveryDate(transportOrder.getConfirmedDeliveryDate());
+        transportOrderUpdateDto.setPickupDate(transportOrder.getPickupDate());
+        transportOrderUpdateDto.setProposedDeliveryDate(transportOrder.getProposedDeliveryDate());
+        transportOrderUpdateDto.setStatus(transportOrder.getStatus());
+        transportOrderUpdateDto.setSalesOrderId(transportOrder.getSalesOrderId());
 
         // patch transport order's delivery date
         RestTemplate restTemplate = new RestTemplate(new HttpComponentsClientHttpRequestFactory());
-        restTemplate.patchForObject(url, transportOrderConfirmedDeliveryDate, TransportOrder.class);
+        restTemplate.patchForObject(url, transportOrderUpdateDto, TransportOrder.class);
     }
 
 }

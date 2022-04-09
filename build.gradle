@@ -13,13 +13,40 @@ repositories {
 }
 
 dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springdoc:springdoc-openapi-ui:1.6.4'
 	implementation 'org.apache.httpcomponents:httpclient:4.4.1'
+
+	implementation 'javax.xml.bind:jaxb-api:2.4.0-b180830.0359'
+	implementation 'javax.activation:activation:1.1.1'
+	implementation 'org.glassfish.jaxb:jaxb-runtime:3.0.2'
+	// https://mvnrepository.com/artifact/org.apache.activemq/activemq-all
+	implementation group: 'org.apache.activemq', name: 'activemq-all', version: '5.4.2'
+	implementation 'org.springframework.boot:spring-boot-starter-activemq:2.6.5'
+
+	runtimeOnly 'mysql:mysql-connector-java'
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+springBoot {
+	buildInfo()
+}
+
+bootRun {
+	standardInput = System.in
+}
+
+bootJar {
+	enabled = false
+}
+
+jar {
+	enabled = true
+
 }

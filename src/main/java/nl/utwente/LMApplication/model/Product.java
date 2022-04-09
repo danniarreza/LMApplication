@@ -1,8 +1,13 @@
 package nl.utwente.LMApplication.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Product {
 
-    private int productId;
+    @Id
+    private Integer productId;
     private String productName;
     private double productQuantity;
     private String productUnit;
@@ -10,11 +15,11 @@ public class Product {
     private double safetyStock;
     private double inventoryAfterThisOrder;
 
-    public int getProductId() {
+    public Integer getProductId() {
         return this.productId;
     }
 
-    public void setProductId(int productId) {
+    public void setProductId(Integer productId) {
         this.productId = productId;
     }
 
@@ -66,13 +71,10 @@ public class Product {
         this.inventoryAfterThisOrder = inventoryAfterThisOrder;
     }
 
-    private int counter = 1;
-
-    public Product(String productName, String productUnit) {
+    public Product(Integer productId, String productName, String productUnit) {
         this.productName = productName;
         this.productUnit = productUnit;
-        this.productId = counter;
-        counter++;
+        this.productId = productId;
     }
 
     public Product(){}

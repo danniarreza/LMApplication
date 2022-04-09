@@ -25,41 +25,23 @@ public class InventoryController {
 
     @GetMapping("/inventory/{id}")
     public Inventory getInventory(@PathVariable int id){
-        // Inventory inventory = new Inventory();
 
-        // Product product = new Product("Chicken", "kg");
-        // inventory.setInventoryId(1);
-        // inventory.setProduct(product);
-        // inventory.setAmount(10);
-
-        Inventory inventory = inventoryRepository.getInventory(id);
+        Inventory inventory = inventoryRepository.findById(id).orElse(null);
 
         return inventory;
     }
 
     @GetMapping("/inventory")
     public List<Inventory> getAllInventory(){
-        // List<Inventory> inventoryList = new ArrayList<Inventory>();
 
-        // for (int i = 0; i < 3; i++) {
-        //     Inventory inventory = new Inventory();
-
-        //     Product product = new Product("Chicken", "kg");
-        //     inventory.setInventoryId(1);
-        //     inventory.setProduct(product);
-        //     inventory.setAmount(10);
-
-        //     inventoryList.add(inventory);
-        // }
-
-        List<Inventory> inventoryList = inventoryRepository.getInventorysAll();
+        List<Inventory> inventoryList = inventoryRepository.findAll();
         
         return inventoryList;
     }
 
     @PostMapping("/inventory")
     public Inventory createInventory(@RequestBody Inventory inventory){
-        inventoryRepository.createInventory(inventory);
+        inventoryRepository.save(inventory);
 
         return inventory;
     }
@@ -73,7 +55,7 @@ public class InventoryController {
     @DeleteMapping("/inventory")
     public int deleteInventory(@PathVariable int id){
 
-        inventoryRepository.deleteInventory(id);
+        inventoryRepository.deleteById(id);
         return id;
     }
     
