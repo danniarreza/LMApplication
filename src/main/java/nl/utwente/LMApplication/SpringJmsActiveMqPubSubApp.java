@@ -1,6 +1,5 @@
 package nl.utwente.LMApplication;
 
-import nl.utwente.LMApplication.model.TransportOrder;
 import nl.utwente.LMApplication.publisher.MessagePublisher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

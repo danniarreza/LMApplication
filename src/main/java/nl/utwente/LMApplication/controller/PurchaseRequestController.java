@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import nl.utwente.LMApplication.model.PurchaseRequest;
 import nl.utwente.LMApplication.repository.PurchaseRequestRepository;
-import nl.utwente.LMApplication.model.PurchaseRequest;
 
 @RestController
 @Tag(name = "Purchase Request", description = "This is the Purchase Request REST API")

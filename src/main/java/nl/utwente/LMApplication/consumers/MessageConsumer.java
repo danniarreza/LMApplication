@@ -1,17 +1,16 @@
 package nl.utwente.LMApplication.consumers;
 
-import javax.jms.JMSException;
-import javax.jms.Message;
-import javax.jms.MessageListener;
-import javax.jms.TextMessage;
-
-import nl.utwente.LMApplication.controller.TransportOrderController;
-import nl.utwente.LMApplication.model.TransportOrder;
-import nl.utwente.LMApplication.repository.TransportOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.Map;
+import nl.utwente.LMApplication.model.TransportOrder;
+import nl.utwente.LMApplication.repository.TransportOrderRepository;
+
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.MessageListener;
+import javax.jms.TextMessage;
 
 @Component
 public class MessageConsumer implements MessageListener {

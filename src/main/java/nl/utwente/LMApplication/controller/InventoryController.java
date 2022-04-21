@@ -1,6 +1,5 @@
 package nl.utwente.LMApplication.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import nl.utwente.LMApplication.model.Inventory;
-import nl.utwente.LMApplication.model.Product;
 import nl.utwente.LMApplication.repository.InventoryRepository;
 
 @RestController

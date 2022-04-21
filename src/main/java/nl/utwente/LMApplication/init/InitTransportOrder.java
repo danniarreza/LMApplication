@@ -1,16 +1,8 @@
 package nl.utwente.LMApplication.init;
 
-import nl.utwente.LMApplication.model.TransportOrder;
 import nl.utwente.LMApplication.repository.TransportOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import javax.annotation.PostConstruct;
-
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 
 @Component
 public class InitTransportOrder {

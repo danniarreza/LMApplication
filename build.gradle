@@ -42,11 +42,11 @@ bootRun {
 	standardInput = System.in
 }
 
-bootJar {
-	enabled = false
-}
+// bootJar {
+// 	enabled = false
+// }
 
-jar {
-	enabled = true
+// jar {
+// 	enabled = true
 
-}
+// }

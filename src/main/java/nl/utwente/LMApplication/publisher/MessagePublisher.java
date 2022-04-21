@@ -1,11 +1,8 @@
 package nl.utwente.LMApplication.publisher;
 
-import nl.utwente.LMApplication.model.TransportOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Component;
-
-import java.util.Map;
 
 @Component
 public class MessagePublisher {

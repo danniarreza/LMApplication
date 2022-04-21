@@ -1,9 +1,5 @@
 package nl.utwente.LMApplication.service;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
@@ -21,7 +17,8 @@ public class TransportOrderService {
     public void updateTransportOrder(TransportOrder transportOrder){
 
         // define target url
-        String url = "http://localhost:8081/salesOrder/" + transportOrder.getSalesOrderId();
+        // String url = "http://localhost:8081/salesOrder/" + transportOrder.getSalesOrderId();
+        String url = "http://sma:8081/salesOrder/" + transportOrder.getSalesOrderId();
 
         // create a variable to update transport order's delivery date
 
